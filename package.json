@@ -2,7 +2,6 @@
   "name": "19_countries-project-setup-in-react",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "parcel index.html"
   },
@@ -10,12 +9,17 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@parcel/transformer-react-refresh-wrap": "^2.15.4",
+    "buffer": "^5.7.1",
     "parcel": "^2.8.3",
     "process": "^0.11.10"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.9.0",
+    "axios": "^1.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.10.0"
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^6.30.1"
   }
 }

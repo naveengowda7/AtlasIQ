@@ -1,0 +1,61 @@
+.border-countries {
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.6;
+}
+
+.border-countries b {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+.border-countries a {
+  display: inline-block;
+  padding: 8px 16px;
+  background: white;
+  color: #2c3e50;
+  text-decoration: none;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid #e1e5e9;
+}
+
+.border-countries a:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.loading-borders {
+  margin-top: 15px;
+  color: #7f8c8d;
+  font-style: italic;
+  font-size: 14px;
+}
+
+/* Dark mode */
+.dark .border-countries b {
+  color: white;
+}
+
+.dark .border-countries a {
+  background: #2b3945;
+  color: white;
+  border-color: #374151;
+}
+
+.dark .border-countries a:hover {
+  background: #374151;
+}
+
+.dark .loading-borders {
+  color: #b2bec3;
+}

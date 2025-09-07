@@ -1,33 +1,34 @@
-import { createRoot } from 'react-dom/client'
-import App from './App'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Contact from './components/Contact'
-import Home from './components/Home'
-import Error from './components/Error'
-import CountryDetail from './components/CountryDetail'
+import { createRoot } from "react-dom/client";
+import App from "./App";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { HomePage } from "./page/HomePage/HomePage";
+import { CountryDetailPage } from "./page/CountryDetailPage/CountryDetailPage";
+import { Provider } from "react-redux";
+import { store } from "./app/store";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <App />,
-    errorElement: <Error />,
     children: [
       {
-        path: '/',
-        element: <Home />,
+        path: "/",
+        element: <HomePage />,
       },
       {
-        path: '/:country',
-        element: <CountryDetail />,
-      },
-      {
-        path: '/contact',
-        element: <Contact />,
+        path: "/:country",
+        element: <CountryDetailPage />,
       },
     ],
   },
-])
+]);
 
-const root = createRoot(document.querySelector('#root'))
-
-root.render(<RouterProvider router={router} />)
+const root = createRoot(document.querySelector("#root"));
+root.render(
+  <ThemeProvider>
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+  </ThemeProvider>
+);

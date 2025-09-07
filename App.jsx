@@ -1,15 +1,16 @@
-import Header from './components/Header'
-import { Outlet } from 'react-router-dom'
-import './App.css'
-import { ThemeProvider } from './contexts/ThemeContext'
+import Header from "./components/Header";
+import { Outlet } from "react-router-dom";
+import "./App.css";
+import { useTheme } from "./hooks/useTheme";
 
 const App = () => {
-   return (
-      <ThemeProvider>
-        <Header />
-        <Outlet />
-      </ThemeProvider>
-  )
-}
+  const [isDark] = useTheme();
+  return (
+    <div className={isDark ? "dark" : ""}>
+      <Header />
+      <Outlet />
+    </div>
+  );
+};
 
-export default App
+export default App;
