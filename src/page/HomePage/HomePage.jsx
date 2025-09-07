@@ -16,7 +16,6 @@ export const HomePage = () => {
     return query !== debouncedQuery && query.trim() !== "";
   }, [query, debouncedQuery]);
 
-  // Update Redux search query when debounced query changes
   useEffect(() => {
     updateSearchQuery(debouncedQuery);
   }, [debouncedQuery, updateSearchQuery]);
@@ -29,6 +28,7 @@ export const HomePage = () => {
   const handleSearchClear = () => {
     setQuery("");
   };
+
 
   return (
     <main className={isDark ? "dark" : ""}>
